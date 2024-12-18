@@ -14,12 +14,31 @@ public class Unit4Test {
         
         //general variables//
         int greatVal = 0;
+        boolean fullyChecked = false;
         //int[] greatValArr = {};
         
         //instantiate 5 cards//
         for(int i=0; i<5; i++){
             cardList.add(new Card());
         }
+        
+            //make sure no values and numbers repeat//
+            for(int i=0; i<5; i++){
+                for(int j=0; j<5; j++){
+                    String cardFace01 = cardList.get(i).getFace();
+                    String cardFace02 = cardList.get(j).getFace();
+                    if(Integer.parseInt(cardList.get(i).getVal()) == Integer.parseInt(cardList.get(j).getVal()) && cardFace01.equals(cardFace02)){
+                        //change the name and value of the variable in i//
+                        cardList.set(i, new Card());
+                        fullyChecked = false;
+                    }else{
+                        fullyChecked = true;
+                    }
+                }
+                
+                //if(Integer.parseInt(cardList.get(i).getVal()) Integer.parseInt(cardList.get(j).getVal())){}
+            }
+        
         
         //cardList.get(0).getVal();
         //print suit and value of each card and indicated which card has the highest value//
